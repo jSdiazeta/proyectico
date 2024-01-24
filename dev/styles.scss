@@ -1,0 +1,53 @@
+// Importar estilos generales
+@import "../../styles";
+
+body {
+  background : #574545;
+}
+
+h1 {
+  color: #eee;
+  font-weight : normal;
+}
+
+.gallery-container {
+  max-width : 900px;
+  display : flex;
+  flex-wrap: wrap;
+  margin : 2em auto;
+}
+
+.gallery-item {
+  padding : .2em;
+  transition: all .2s;
+  position : relative;
+
+  @media screen and (min-width: 480px){
+    width : 50%;
+  }
+
+  @media screen and (min-width: 768px){
+    width : 33.33%;
+  }
+
+  @media screen and (min-width: 1024px){
+    width : 25%;
+  }
+
+  img {
+    display : block;
+    border : 1px solid #888;
+  }
+}
+
+// Truco
+.gallery-container:hover {
+  .gallery-item:hover {
+    transform: scale(1.5);
+    z-index : 200;
+  }
+
+  .gallery-item:not(:hover){
+    opacity : .2;
+  }
+}
